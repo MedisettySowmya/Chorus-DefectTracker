@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Chorus Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Chorus Test(failed)">
+    <classes>
+      <class name="testcases.ChorusLoginusinglocatersfile">
+        <methods>
+          <include name="UserLogin"/>
+          <include name="setup"/>
+          <include name="BrowserClose"/>
+        </methods>
+      </class> <!-- testcases.ChorusLoginusinglocatersfile -->
+      <class name="testcases.DefectTrackerApp">
+        <methods>
+          <include name="DefectTrackerAppLaunch"/>
+          <include name="setup"/>
+          <include name="BrowserClose"/>
+        </methods>
+      </class> <!-- testcases.DefectTrackerApp -->
+    </classes>
+  </test> <!-- Chorus Test(failed) -->
+</suite> <!-- Failed suite [Chorus Test Suite] -->

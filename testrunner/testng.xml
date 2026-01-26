@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Chorus Test Suite" parallel="false">  <!-- Disable parallel execution -->
+    <test name="Chorus Test">
+        <classes>
+            <class name="testcases.ChorusLoginusinglocatersfile"/>
+            <class name="testcases.DefectTrackerApp"/> 
+        </classes>
+    </test>
+</suite>
