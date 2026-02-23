@@ -8,15 +8,16 @@
           <include name="UserLogin"/>
           <include name="setup"/>
           <include name="BrowserClose"/>
+          <include name="initUtils"/>
         </methods>
       </class> <!-- testcases.ChorusLoginusinglocatersfile -->
-      <class name="testcases.DefectTrackerApp">
+      <class name="testcases.AppsPage">
         <methods>
-          <include name="DefectTrackerAppLaunch"/>
+          <include name="AppLunch"/>
           <include name="setup"/>
           <include name="BrowserClose"/>
         </methods>
-      </class> <!-- testcases.DefectTrackerApp -->
+      </class> <!-- testcases.AppsPage -->
     </classes>
   </test> <!-- Chorus Test(failed) -->
 </suite> <!-- Failed suite [Chorus Test Suite] -->

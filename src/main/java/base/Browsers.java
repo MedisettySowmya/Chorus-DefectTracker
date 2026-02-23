@@ -7,13 +7,14 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -26,7 +27,7 @@ public class Browsers {
 	public static FileReader configFileReader;
 	public static FileReader locatorFileReader;
 
-	@BeforeClass
+	@BeforeSuite
 	public void setup() throws IOException {
 		if (driver == null) { 
 
@@ -53,7 +54,12 @@ public class Browsers {
 			switch (browserName.toLowerCase()) {
 			case "chrome":
 				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.addArguments("--start-maximized");			
+				driver = new ChromeDriver(chromeOptions);
+		        driver.get(prop.getProperty("ChorusURL"));
+
+				//add chrome options and maximize window
 				break;
 			case "firefox":
 				WebDriverManager.firefoxdriver().setup();
@@ -72,7 +78,7 @@ public class Browsers {
 			default:
 				throw new IllegalArgumentException("Invalid browser name: " + browserName);
 			}
-			driver.manage().window().maximize();
+			//driver.manage().window().maximize();
 
 			// Initialize WebDriverWait after WebDriver initialization
 			wait = new WebDriverWait(driver, Duration.ofSeconds(10));

@@ -4,7 +4,7 @@
     <test name="Chorus Test">
         <classes>
             <class name="testcases.ChorusLoginusinglocatersfile"/>
-            <class name="testcases.DefectTrackerApp"/> 
+            <class name="testcases.AppsPage"/> 
         </classes>
     </test>
 </suite>

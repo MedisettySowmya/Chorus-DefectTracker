@@ -10,13 +10,13 @@
           <include name="BrowserClose"/>
         </methods>
       </class> <!-- testcases.ChorusLoginusinglocatersfile -->
-      <class name="testcases.DefectTrackerApp">
+      <class name="testcases.AppsPage">
         <methods>
-          <include name="DefectTrackerAppLaunch"/>
+          <include name="AppLunch"/>
           <include name="setup"/>
           <include name="BrowserClose"/>
         </methods>
-      </class> <!-- testcases.DefectTrackerApp -->
+      </class> <!-- testcases.AppsPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

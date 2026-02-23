@@ -2,9 +2,7 @@ package testcases;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -238,7 +236,7 @@ public class DefectTrackerApp extends Browsers {
 					js.executeScript("arguments[0].scrollIntoView(true);", stepsHere);
 					stepsHere.click();
 
-					// ✅ Send text from Excel (getter method)
+					// Send text from Excel (getter method)
 					String stepsText = defectData.getSteps();
 					System.out.println("Steps text: " + stepsText);
 					stepsHere.sendKeys(stepsText);
