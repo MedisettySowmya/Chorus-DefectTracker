@@ -1,43 +1,30 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
 - master
-resources:
-  repositories:
-    - repository: ChorusDefectTrackerRepo
-      type: github
-      name: MedisettySowmya/Chorus-DefectTracker
-      endpoint: MedisettySowmya
+
 pool:
-  vmImage: ubuntu-latest
+  name: Default
 
 steps:
 
-- task: Maven@3
-  displayName: Build and Run Tests
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean test'
+- checkout: self
+
+
+- script: mvn clean test
+  displayName: Build and Run Selenium Tests
 
 
 - task: PublishTestResults@2
   displayName: Publish Test Results
   inputs:
-    testResultsFiles: '**/surefire-reports/*.xml'
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
     testRunTitle: 'Automation Test Results'
 
 
 - task: PublishBuildArtifacts@1
-  displayName: Publish Test Output Files
+  displayName: Publish Test Reports
   inputs:
     pathToPublish: 'target/surefire-reports'
     artifactName: 'TestReports'
+
+
+    
